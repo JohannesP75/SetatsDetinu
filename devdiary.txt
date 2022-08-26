@@ -1,0 +1,243 @@
+[14:11 31/07/2015]
+
+Began anew to write functions prototypes and io stuff
+
+[20:40 02/07/2016]
+
+Maybe a C++ version would be better
+
+[20:58 02/07/2016]
+
+I think I will try C instead, as originally intended - C++ might be for a future release
+
+[21:11 02/07/2016]
+
+From king.bas:
+* A is for the treasury (starts between 59000 and 61000)
+* B is for the number of citizens (starts between 490 and 510)
+* C is for the number of foreign workers (starts at 0)
+* D is for the amount of land (starts at 2000)
+* W is for the land buying price (starts between 95 and 105)
+* V9 is the planting cost (between 10 and 15)
+
+[21:40 05/07/2016]
+
+It seems the lines 240 to 280 weren't to be executed, since the variable X is unaccessible.
+The code for the subroutine coding for the sale of land is done.
+
+[21:45 05/07/2016]
+
+I'm now coding the distribution of rallods to the populace.
+
+[21:52 05/07/2016@
+
+Coding of the rallods distribution done.
+
+[21:57 05/07/2016]
+
+I'm starting the coding of the planting.
+
+[22:18 05/07/2016]
+
+Coding of planting done.
+
+[22:26 05/07/2016]
+
+I've started pollution management.
+
+[22:39 05/07/2016]
+
+Pollution management done
+
+[20:55 06/07/2016]
+
+Created a new struct "t_budget"
+
+[21:19 06/07/2016]
+
+From the BASIC file:
+- Lines 1 to 47 are for the introduction
+- L. 50 to 100 are for initialization
+- L. 102 to 162 are for presenting the island
+- L. 200 to 310 are for selling land
+- L. 320 to 400 are for distributing money to citizens
+- L. 410 to 500 are for planting
+- L. 510 to 550 are for pollution control
+- L. 600 to 618 provides for an endgame for when H,I,J or K are nil
+- L. 1002 to 1545 are for computing the bilan of the decisions taken by the player
+	- L. 1100 to 1110 is for the food allocation
+	- L. 1120 to 1140 is for pollution
+	- L. 1150 to 1194 is for funeral expenses
+	- L. 1200 to 1292 is for managing migrations
+	- L. 1305 to 1405 is for harvests
+	- L. 1410 to 1482 is for tourism
+	- L. 1500 to 1545 is for allocating endings
+- L. 1550 to 1950 are for the endings
+	- L. 1550 to 1592 are for a foreign takeover
+	- L. 1600 to 1692 are for mismanagement
+	- L. 1700 to 1730 are for causing the death of one third of the population
+	- L. 1800 to 1850 are for famine while cash was remaining in the chests
+	- L. 1900 to 1950 are for success
+- L. 1960 to 2016 are for restarting a previous game
+
+[21:56 07/07/2016]
+
+The function for playing a turn is finished.
+Of note:
+- H is for the sold land
+- I is for the distribued rallods
+- J is for the planted land
+- K is for the pollution control budget
+
+[20:49 21/07/2016]
+
+I'm writing the computing of the end of the turn.
+
+[20:53 21/07/2016]
+
+It seems a citizen needs 100 rallods to live
+
+[22:09 22/07/2016]
+
+Subroutin for coding immigration done.
+
+[19:54 24/07/2016]
+
+I'm working on the harvesting.
+
+[20:33 24/07/2016]
+
+The variable T1, only used in the lines 1344 and 1355, seems to have been a way to track down pollution; it was supposed to print a message.
+Since it is not coded for, I will not take this in account.
+
+[20:55 24/07/2016]
+
+Harvesting is done, tourism is next.
+
+Lines 1400 and 1405 are not for harvest but for tourism.
+
+[21:13 24/07/2016]
+
+Variable V1 is the upper bound of the profits from tourism while V2 is the lower bound; if V2 nil or if the profits from tourism are higher than V3 then a message informing us tourism is lower because of pollution will not appear.
+
+[21:35 24/07/2016]
+
+Tourism is done; some of the coding there shows why you don't publish code from amateurs.
+
+Sinde I skipped the funerals, I will have to take back this part.
+
+[21:50 24/07/2016]
+
+It costs 9 rallods to bury someone.
+
+[21:56 24/07/2016]
+
+Burial done.
+
+[20:30 25/07/2016]
+
+Started the ending messages.
+
+[20:33 25/07/2016]
+
+B5 is for the number of dead citizens.
+
+[20:43 25/07/2016]
+
+Typo line 1710: "popultation"->"population" - He was illiterate too
+
+[21:12 25/07/2016]
+
+Ending messages done.
+
+[21:13 25/07/2016]
+
+From the ending assessment:
+- If more than 200 deads then END_MISMANAGEMENT
+- If less than 343 citizens then END_ONE_THIRD_DEAD
+- If the treasury in the start of the turn is more than 500 then END_WILFUL_FAMINE
+- If there is more foreigners than citizens then END_FOREIGN_TAKEOVER
+- If the number of turns is equal to the term office then ENd_SUCCESS
+
+[21:46 25/07/2016]
+
+Ending assessment done.
+
+[22:23 26/07/2016]
+
+I'm implementing the restarting of a game from data from previous game.
+
+[01:40 19/03/2020]
+
+Did some minor fixes; I plan to continue soon.
+
+[01:38 27/03/2020]
+
+Finished init_country_restart
+
+[23:58 10/07/2021]
+
+First attempt to build the project, if only to see what's wrong there.
+
+[00:15 11/07/2021]
+Corrected faults caused by basic inattention; now remains only one related to sscanf in the main()
+
+[21:22 11/05/2022]
+Error fixed in the main() after making "buffer" an array dynamically declared through malloc; was statically declared before; however, I've plenty "undefined reference" about random and random_ab, both declared in common.h
+
+[21:51 11/05/2022]
+
+I had forgotten to implement the RNG functions! Adter doing this, I solved every building issue.
+
+[00:01 12/05/2022]
+
+Remaining issues:
+- the program isn't able to read the imput string in the main()
+- moreover, it seems the turn always ends with wilfil amandonment by the player, even when he entered positive values
+
+[01:34 14/05/2022]
+My line-reading function has been verified to work, and it remove trailing '\n'. I noticed that the init_country was called right after the do-while, meaning it executes even when the player was to replay a previous game.
+
+Moreover, if the pollution budget is set at 0 then the calculus of the number of polluted citizens cause a divide by 0.
+
+[00:32 21/05/2022]
+I'm still working on the issue of a nil pollution budget causing a divide by 0; I've worked since 16 on the issue.
+(later)
+I4ve managed to fix the divide by 0 by making "buffer" worth 1 if the result would have been null otherwise but the following snippet cause a SIGFPE: "polluted_citizens/=buffer/25"
+(later)
+Solved by turning the division into a multiplication: "polluted_citizens*=25/buffer"; however the WILFUL_FAMINE still exists thanks to incoherent arithmetic values for country attributes.
+
+[02:02 05/06/2022]
+I've just rediscovered putting any budget to zero is interpreted by turn_playing_country as END_WILFUL_ABANDON
+
+[23:15 06/06/2022]
+Made testing this long week-end and it seems the END_NONE is turned into END_WILFUL_FAMINE.
+
+[00:12 29/06/2022]
+Back to work: I found that END_WILFUL_FAMINE occurs when land_sold, distribution_budget, land_planted and pollution_control_budget are set to 0; I will fix the oversight by requiring a negative value being entered
+
+[00:37 05/07/2022]
+Finished print_stderr_country, which had started last week-end, on a Saturday
+
+[02:26 08/07/2022]
+Returned to work but had "variable or field declared void" error about function printing country and budget in stderr
+
+[01:40 11/07/2022]
+In function end_turn_computing, the following line is messing with the ending:
+	else if(old_treasury>MAXIMUM_CASH_IN_OLD_TREASURY)country->ending=END_WILFUL_FAMINE;
+It states that if the original value of the treasury at the beginning of the function (that is, after food, planting and pollution had been factored in) is higher than 500 then it causes the END_WILFUL_FAMINE; seems the original formule was "B5-F1<2", with B5 the total number of dead and F1 the number of dead of pollution
+
+[02:11 20/07/2022]
+Created a separate struct to modelize population
+
+[02:11 21/07/2022]
+Solved issue relative to ending by the following test "old_treasury>MAXIMUM_CASH_IN_OLD_TREASURY&&country->population.starved_citizens!=0"
+
+[01:52 27/07/2022]
+Did a small play. Nothing but minor points to settle. Made the program print more infos in DEBUG
+
+[01:25 03/08/2022]
+Game finished
+
+[02:06 05/08/2022]
+Last details settled; it took a while, to restart this project I completly forgot about.
